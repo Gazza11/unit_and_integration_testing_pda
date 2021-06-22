@@ -45,10 +45,10 @@ describe("Calculator", () => {
   })
 
   it('should be able to display an error message when exceptional circumstances arise', () => {
-    cy.get('#number0').click();
+    cy.get('#number5').click();
     cy.get('#operator-divide').click();
     cy.get('#number0').click();
     cy.get('#operator-equals').click();
-    cy.get('.display').should('contain', 'error')
+    cy.get('.display').should('contain', 'error - cannot divide by 0')
   })
 })
