@@ -99,4 +99,22 @@ describe('Calculator', () => {
     buttonEquals.simulate('click');
     expect(runningTotal.text()).toEqual('15');
   })
+
+  it('should be able to clear running total without affecting calculator', () => {
+    const button3 = container.find('#number3');
+    const buttonMultiply = container.find('#operator-multiply');
+    const button5 = container.find('#number5');
+    const buttonEquals = container.find('#operator-equals')
+    const runningTotal = container.find('#running-total');
+    const buttonClear = container.find('#clear');
+    buttonClear.simulate('click');
+    expect(runningTotal.text()).toEqual('0');
+    button3.simulate('click');
+    buttonMultiply.simulate('click');
+    button5.simulate('click');
+    buttonEquals.simulate('click');
+    expect(runningTotal.text()).toEqual('15');
+    buttonClear.simulate('click');
+    expect(runningTotal.text()).toEqual('0');
+  })
 })
