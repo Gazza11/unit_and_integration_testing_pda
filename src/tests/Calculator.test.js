@@ -43,4 +43,17 @@ describe('Calculator', () => {
     buttonEquals.simulate('click');
     expect(runningTotal.text()).toEqual('3');
   })
+
+  it('should be able to multiply two numbers together', () => {
+    const button3 = container.find('#number3');
+    const buttonMultiply = container.find('#operator-multiply');
+    const button5 = container.find('#number5');
+    const buttonEquals = container.find('#operator-equals')
+    const runningTotal = container.find('#running-total');
+    button3.simulate('click');
+    buttonMultiply.simulate('click');
+    button5.simulate('click');
+    buttonEquals.simulate('click');
+    expect(runningTotal.text()).toEqual('15');
+  })
 })
