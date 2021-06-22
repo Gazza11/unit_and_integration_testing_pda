@@ -25,4 +25,14 @@ describe("Calculator", () => {
     cy.get('#operator-equals').click();
     cy.get('.display').should('contain', '72')
   })
+
+  it('should be able display expected output for a range of numbers, including negative and decimal numbers', () => {
+    cy.get('#number4').click();
+    cy.get('#decimal').click();
+    cy.get('#number5').click();
+    cy.get('#operator-multiply').click();
+    cy.get('#number7').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '31.5')
+  })
 })
