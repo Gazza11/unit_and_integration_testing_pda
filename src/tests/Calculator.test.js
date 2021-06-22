@@ -71,4 +71,13 @@ describe('Calculator', () => {
     buttonEquals.simulate('click');
     expect(runningTotal.text()).toEqual('3');
   })
+
+  it('should concatenate multiple numbers when buttons clicked', () => {
+    const button2 = container.find('#number2');
+    const button1 = container.find('#number1');
+    const runningTotal = container.find('#running-total');
+    button2.simulate('click');
+    button1.simulate('click');
+    expect(runningTotal.text()).toEqual('21');
+  })
 })
