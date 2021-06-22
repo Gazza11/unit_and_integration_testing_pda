@@ -15,4 +15,14 @@ describe("Calculator", () => {
     cy.get('#operator-equals').click();
     cy.get('.display').should('contain', '9')
   })
+
+  it('should be able to chain multiple operations together', () => {
+    cy.get('#number4').click();
+    cy.get('#operator_add').click();
+    cy.get('#number5').click();
+    cy.get('#operator-multiply').click();
+    cy.get('#number8').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '72')
+  })
 })
