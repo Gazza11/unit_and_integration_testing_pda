@@ -7,4 +7,12 @@ describe("Calculator", () => {
     cy.get('#number2').click();
     cy.get('.display').should('contain', '2')
   })
+
+  it('should have working arithmetic buttons that update with result displayed ', () => {
+    cy.get('#number4').click();
+    cy.get('#operator_add').click();
+    cy.get('#number5').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '9')
+  })
 })
